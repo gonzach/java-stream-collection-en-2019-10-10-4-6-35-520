@@ -23,19 +23,19 @@ public class MyMapTest {
         assertThat(myMap.getTriple()).isEqualTo(resultList);
     }
 
-    @Test
-    public void should_map_to_letter() {
-        //Numbers are mapped to letters
-        Integer[] array = new Integer[]{1, 2, 3, 4, 5};
-        List<Integer> list = Arrays.asList(array);
-
-        MyMap myMap = new MyMap(list);
-
-        String[] result = new String[]{"a", "b", "c", "d", "e"};
-        List<String> resultList = Arrays.asList(result);
-
-        assertThat(myMap.mapLetter()).isEqualTo(resultList);
-    }
+//    @Test
+//    public void should_map_to_letter() {
+//        //Numbers are mapped to letters
+//        Integer[] array = new Integer[]{1, 2, 3, 4, 5};
+//        List<Integer> list = Arrays.asList(array);
+//
+//        MyMap myMap = new MyMap(list);
+//
+//        String[] result = new String[]{"a", "b", "c", "d", "e"};
+//        List<String> resultList = Arrays.asList(result);
+//
+//        assertThat(myMap.mapLetter()).isEqualTo(resultList);
+//    }
 
 //    @Test
 //    public void should_map_to_letters() {

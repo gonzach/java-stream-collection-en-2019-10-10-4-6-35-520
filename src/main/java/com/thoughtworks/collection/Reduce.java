@@ -2,7 +2,10 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.stream.IntStream;
 
 public class Reduce {
 
@@ -13,15 +16,27 @@ public class Reduce {
     }
 
     public int getMaximum() {
-        throw new NotImplementedException();
+       return this.arrayList.stream()
+               .mapToInt(v -> v)
+               .max().orElseThrow(NoSuchElementException::new);
+
+//                .reduce((n,v) -> n>v ? n:v)
+//                .reduce(Integer::)
+//                .get();
     }
 
     public double getMinimum() {
-        throw new NotImplementedException();
+        return this.arrayList
+                .stream()
+                .mapToInt(v -> v)
+                .min().orElseThrow(NoSuchElementException::new);
     }
 
     public double getAverage() {
-        throw new NotImplementedException();
+        return this.arrayList
+                .stream()
+                .mapToDouble(v -> v)
+                .average().orElseThrow(NoSuchElementException::new);
     }
 
     public double getOrderedMedian() {
@@ -29,11 +44,16 @@ public class Reduce {
     }
 
     public int getFirstEven() {
-        throw new NotImplementedException();
+        return this.arrayList.stream()
+                .filter(val -> val % 2 == 0)
+                .findFirst().orElse(null);
     }
 
     public int getIndexOfFirstEven() {
-        throw new NotImplementedException();
+        return IntStream.range(0, this.arrayList.size())
+                .filter(i -> (this.arrayList.get(i)) % 2 == 0)
+                .findFirst()
+                .orElse(-1);
     }
 
     public boolean isEqual(List<Integer> arrayList) {
