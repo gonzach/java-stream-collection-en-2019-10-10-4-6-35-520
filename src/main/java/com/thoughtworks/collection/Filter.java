@@ -9,24 +9,31 @@ public class Filter {
     List<Integer>  array;
 
     public Filter(List<Integer> array) {
-        List<Integer> finalRes = array.stream()
-                                .filter(num -> num % 2 == 0)
-                                .collect(Collectors.toList());
+        this.array = array;
     }
 
     public List<Integer> filterEven() {
-            return null;
+        return this.array.stream()
+                .filter(num -> num % 2 == 0)
+                .collect(Collectors.toList());
     }
 
     public List<Integer> filterMultipleOfThree() {
-        return null;
+        return this.array.stream()
+                .filter(val -> val % 3 == 0)
+                .collect(Collectors.toList());
     }
 
     public List<Integer> getCommonElements(List<Integer> firstList, List<Integer> secondList) {
-        return null;
+        return firstList.stream()
+                .filter(val -> secondList.contains(val))
+                .collect(Collectors.toList());
+
     }
 
     public List<Integer> getDifferentElements() {
-        return null;
+        return this.array.stream()
+                .distinct()
+                .collect(Collectors.toList());
     }
 }
