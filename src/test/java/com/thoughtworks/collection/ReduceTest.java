@@ -106,15 +106,15 @@ public class ReduceTest {
         assertThat(reduce.getIndexOfFirstEven()).isEqualTo(3);
     }
 
-//    @Test
-//    public void should_return_last_even_element() {
-//        //Get the last odd number in the array
-//        Integer[] array = new Integer[]{1, 11, 27, 20, 4, 9, 15};
-//        List<Integer> arrayList = Arrays.asList(array);
-//
-//        Reduce reduce = new Reduce(arrayList);
-//        assertThat(reduce.getLastOdd()).isEqualTo(15);
-//    }
+    @Test
+    public void should_return_last_even_element() {
+        //Get the last odd number in the array
+        Integer[] array = new Integer[]{1, 11, 27, 20, 4, 9, 15};
+        List<Integer> arrayList = Arrays.asList(array);
+
+        Reduce reduce = new Reduce(arrayList);
+        assertThat(reduce.getLastOdd()).isEqualTo(15);
+    }
 
 //    @Test
 //    public void should_return_index_of_last_even_element() {
