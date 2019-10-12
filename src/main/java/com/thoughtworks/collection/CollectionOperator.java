@@ -24,7 +24,10 @@ public class CollectionOperator {
     }
 
     public List<Integer> popEvenElments(int[] array) {
-        List<Integer> list = Arrays.stream(array).filter( i -> i % 2 == 0).boxed().collect(Collectors.toList());
+        List<Integer> list = Arrays.stream(array)
+                .filter( i -> i % 2 == 0)
+                .boxed()
+                .collect(Collectors.toList());
         return list;
     }
 

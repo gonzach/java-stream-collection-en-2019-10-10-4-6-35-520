@@ -39,7 +39,7 @@ public class Add {
 //    public List<Integer> getTripleOfOddAndAddTwo(List<Integer> arrayList) {
 //        return arrayList.stream()
 //                .filter(val -> val % 2 != 0)
-//                .map(val -> (val * 3) + 2)
+//                .map(v -> (v * 3) + 2)
 //                .collect(Collectors.toList());
 //     //   a%2 !== ? a * 3 + 2:a
 //    }
@@ -81,7 +81,7 @@ public class Add {
         return finalRes;
     }
 
-    public List<Integer> getProcessedList(List<Integer> arrayList) {
-        return null;
-    }
+//    public List<Integer> getProcessedList(List<Integer> arrayList) {
+//        return null;
+//    }
 }

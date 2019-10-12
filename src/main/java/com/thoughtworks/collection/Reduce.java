@@ -19,10 +19,6 @@ public class Reduce {
        return this.arrayList.stream()
                .mapToInt(v -> v)
                .max().orElseThrow(NoSuchElementException::new);
-
-//                .reduce((n,v) -> n>v ? n:v)
-//                .reduce(Integer::)
-//                .get();
     }
 
     public double getMinimum() {
@@ -36,7 +32,8 @@ public class Reduce {
         return this.arrayList
                 .stream()
                 .mapToDouble(v -> v)
-                .average().orElseThrow(NoSuchElementException::new);
+                .average()
+                .orElseThrow(NoSuchElementException::new);
     }
 
     public double getOrderedMedian() {
@@ -46,14 +43,15 @@ public class Reduce {
     public int getFirstEven() {
         return this.arrayList.stream()
                 .filter(val -> val % 2 == 0)
-                .findFirst().orElse(null);
+                .findFirst()
+                .orElseThrow(NoSuchElementException::new);
     }
 
     public int getIndexOfFirstEven() {
         return IntStream.range(0, this.arrayList.size())
                 .filter(i -> (this.arrayList.get(i)) % 2 == 0)
                 .findFirst()
-                .orElse(-1);
+                .orElseThrow(NoSuchElementException::new);
     }
 
     public boolean isEqual(List<Integer> arrayList) {
@@ -65,10 +63,19 @@ public class Reduce {
     }
 
     public int getLastOdd() {
-        throw new NotImplementedException();
+        return this.arrayList.stream()
+                .filter(val -> val % 2 != 0)
+                .distinct()
+                .reduce((first, second) -> second)
+                .orElse(null);
     }
 
     public int getIndexOfLastOdd() {
-        throw new NotImplementedException();
+        return IntStream.range(0, this.arrayList.size())
+                .filter(i -> (this.arrayList.get(i)) % 2 != 0)
+                .sorted()
+                .distinct()
+                .findFirst()
+                .orElseThrow(NoSuchElementException::new);
     }
 }
