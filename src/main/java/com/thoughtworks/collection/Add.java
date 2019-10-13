@@ -2,10 +2,7 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -36,13 +33,12 @@ public class Add {
         return arrayList.stream().mapToInt(val -> (val * 3) + 2).sum();
     }
 
-//    public List<Integer> getTripleOfOddAndAddTwo(List<Integer> arrayList) {
-//        return arrayList.stream()
-//                .filter(val -> val % 2 != 0)
-//                .map(v -> (v * 3) + 2)
-//                .collect(Collectors.toList());
-//     //   a%2 !== ? a * 3 + 2:a
-//    }
+    public List<Integer> getTripleOfOddAndAddTwo(List<Integer> arrayList) {
+        return arrayList.stream()
+                .filter(val -> val % 2 != 0)
+                .map(v -> (v * 3) + 2)
+                .collect(Collectors.toList());
+    }
 
     public int getSumOfProcessedOdds(List<Integer> arrayList) {
         return arrayList.stream()
@@ -50,9 +46,16 @@ public class Add {
                 .mapToInt(val -> (val * 3) + 5).sum();
     }
 
-//    public double getMedianOfEven(List<Integer> arrayList) {
-//
-//    }
+    public double getMedianOfEven(List<Integer> arrayList) {
+        arrayList.stream();
+        double median;
+        if (arrayList.size() % 2 == 0) {
+            median = ((double) arrayList.get(arrayList.size() / 2) + (double) arrayList.get(arrayList.size() / 2 - 1))/2;
+        } else {
+            median = (double) arrayList.get(arrayList.size() / 2);
+        }
+        return median;
+    }
 
     public double getAverageOfEven(List<Integer> arrayList) {
         return  arrayList.stream()

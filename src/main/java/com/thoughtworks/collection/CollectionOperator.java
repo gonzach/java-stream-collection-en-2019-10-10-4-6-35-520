@@ -6,9 +6,10 @@ import java.util.stream.IntStream;
 
 public class CollectionOperator {
     public List<Integer> getListByInterval(int left, int right) {
-        List<Integer> list = IntStream.range(left, right)
+        List<Integer> list =   IntStream.range(right, left)
                 .boxed()
                 .collect(Collectors.toList());
+
         if (left > right) {
             Collections.reverse(list);
         }

@@ -41,19 +41,19 @@ public class AddTest {
         assertThat(add.getSumTripleAndAddTwo(arrayList)).isEqualTo(390);
     }
 
-//    @Test
-//    public void should_get_triple_of_odd_and_add_two() {
-//        //For odd number (n*3 + 2)
-//        Integer[] array = new Integer[]{1, 5, 7, 12, 11, 35, 54, 67, 70};
-//        List<Integer> arrayList = Arrays.asList(array);
-//
-//        Integer[] result = new Integer[]{5, 17, 23, 12, 35, 107, 54, 203, 70};
-//        List<Integer> resultList = Arrays.asList(result);
-//
-//        Add add = new Add();
-//
-//        assertThat(add.getTripleOfOddAndAddTwo(arrayList)).isEqualTo(resultList);
-//    }
+    @Test
+    public void should_get_triple_of_odd_and_add_two() {
+        //For odd number (n*3 + 2)
+        Integer[] array = new Integer[]{1, 5, 7, 12, 11, 35, 54, 67, 70};
+        List<Integer> arrayList = Arrays.asList(array);
+
+        Integer[] result = new Integer[]{5, 17, 23, 12, 35, 107, 54, 203, 70};
+        List<Integer> resultList = Arrays.asList(result);
+
+        Add add = new Add();
+
+        assertThat(add.getTripleOfOddAndAddTwo(arrayList)).isEqualTo(resultList);
+    }
 
     @Test
     public void should_get_sum_of_processed_odd() {
@@ -79,15 +79,15 @@ public class AddTest {
 //        assertThat(add.getProcessedList(arrayList)).isEqualTo(resultList);
 //    }
 
-////    @Test
-////    public void should_return_median_of_even() {
-////        //Find the median of an array of all even numbers in the array
-////        Integer[] array = new Integer[]{1, 2, 3, 4, 5};
-////        List<Integer> arrayList = Arrays.asList(array);
-////
-////        Add add = new Add();
-////        assertThat(add.getMedianOfEven(arrayList)).isEqualTo((double) 3);
-////    }
+    @Test
+    public void should_return_median_of_even() {
+        //Find the median of an array of all even numbers in the array
+        Integer[] array = new Integer[]{1, 2, 3, 4, 5};
+        List<Integer> arrayList = Arrays.asList(array);
+
+        Add add = new Add();
+        assertThat(add.getMedianOfEven(arrayList)).isEqualTo((double) 3);
+    }
 
     @Test
     public void should_return_average_of_even() {

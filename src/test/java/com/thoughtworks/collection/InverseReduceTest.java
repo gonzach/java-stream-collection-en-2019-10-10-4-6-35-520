@@ -10,7 +10,7 @@ import static org.mockito.Mockito.when;
 
 public class InverseReduceTest {
 
-    @Test
+//    @Test
 //    public void should_be_divided_to_smaller_number() {
 //     //Infinitely split to equal to 0 according to a given number (tips：9-2=7,7-2=5 ...)
 //        Random random = mock(Random.class);
