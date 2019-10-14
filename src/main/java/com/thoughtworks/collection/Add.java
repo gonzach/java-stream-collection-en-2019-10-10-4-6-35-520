@@ -14,7 +14,6 @@ public class Add {
 
         IntStream numbers = IntStream.rangeClosed(lowerLimit, upperLimit);
         return numbers.filter(val -> val%2 == 0).sum();
-
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
@@ -35,8 +34,7 @@ public class Add {
 
     public List<Integer> getTripleOfOddAndAddTwo(List<Integer> arrayList) {
         return arrayList.stream()
-                .filter(val -> val % 2 != 0)
-                .map(v -> (v * 3) + 2)
+                .map(v -> (v % 2 != 0) ? ((v*3) + 2) : v)
                 .collect(Collectors.toList());
     }
 
@@ -65,7 +63,11 @@ public class Add {
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
-        throw new NotImplementedException();
+        List<Integer> evenList = arrayList.stream()
+                .filter(val -> val % 2 == 0)
+                .collect(Collectors.toList());
+
+        return evenList.contains(specialElment);
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {

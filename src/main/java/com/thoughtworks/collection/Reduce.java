@@ -78,8 +78,6 @@ public class Reduce {
     }
 
     public int getIndexOfLastOdd() {
-        return null;
-       // return this.arrayList[this.arrayList.length-1];
-       // return this.arrayList.lastIndexOf(this.arrayList.size()-1);
+        throw new NotImplementedException();
     }
 }
