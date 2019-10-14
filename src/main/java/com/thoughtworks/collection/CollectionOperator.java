@@ -6,21 +6,25 @@ import java.util.stream.IntStream;
 
 public class CollectionOperator {
     public List<Integer> getListByInterval(int left, int right) {
-        List<Integer> list =   IntStream.range(right, left)
+        List<Integer> list = IntStream.rangeClosed(left, right)
                 .boxed()
                 .collect(Collectors.toList());
 
-        if (left > right) {
+        if (left < right ){
             Collections.reverse(list);
         }
         return list;
     }
 
     public List<Integer> getEvenListByIntervals(int left, int right) {
-        List<Integer> list = IntStream.range(left, right)
+        List<Integer> list = IntStream.rangeClosed(left, right)
                 .filter(val -> val % 2 == 0)
                 .boxed()
                 .collect(Collectors.toList());
+
+        if (left < right ){
+            Collections.reverse(list);
+        }
         return list;
     }
 
@@ -33,7 +37,7 @@ public class CollectionOperator {
     }
 
     public int popLastElment(int[] array) {
-        return Integer.parseInt(null);
+        return array[array.length-1];
     }
 
     public List<Integer> popCommonElement(int[] firstArray, int[] secondArray) {

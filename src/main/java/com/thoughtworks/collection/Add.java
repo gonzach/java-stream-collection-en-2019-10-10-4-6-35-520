@@ -64,10 +64,10 @@ public class Add {
                 .average().orElseThrow(NoSuchElementException::new);
     }
 
-//    public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
-//        throw new NotImplementedException();
-//    }
-//
+    public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
+        throw new NotImplementedException();
+    }
+
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
         List<Integer> finalRes = arrayList.stream()
                 .filter(val -> val % 2 == 0)
@@ -84,7 +84,7 @@ public class Add {
         return finalRes;
     }
 
-//    public List<Integer> getProcessedList(List<Integer> arrayList) {
-//        return null;
-//    }
+    public List<Integer> getProcessedList(List<Integer> arrayList) {
+        return null;
+    }
 }
