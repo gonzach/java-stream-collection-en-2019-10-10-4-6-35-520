@@ -1,7 +1,5 @@
 package com.thoughtworks.collection;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -16,9 +14,9 @@ public class Reduce {
     }
 
     public int getMaximum() {
-       return this.arrayList.stream()
-               .mapToInt(v -> v)
-               .max().orElseThrow(NoSuchElementException::new);
+        return this.arrayList.stream()
+                .mapToInt(v -> v)
+                .max().orElseThrow(NoSuchElementException::new);
     }
 
     public double getMinimum() {
@@ -40,7 +38,8 @@ public class Reduce {
         this.arrayList.stream();
         double median;
         if (this.arrayList.size() % 2 == 0) {
-            median = ((double) this.arrayList.get(this.arrayList.size() / 2) + (double) this.arrayList.get(this.arrayList.size() / 2 - 1))/2;
+            median = ((double) this.arrayList.get(this.arrayList.size() / 2)
+                    + (double) this.arrayList.get(this.arrayList.size() / 2 - 1)) / 2;
         } else {
             median = (double) this.arrayList.get(this.arrayList.size() / 2);
         }
@@ -62,22 +61,29 @@ public class Reduce {
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        return Arrays.equals(this.arrayList.toArray(), arrayList.toArray());
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
-        throw new NotImplementedException();
+        int middleNumber = arrayList.size() / 2;
+        if (arrayList.size() % 2 == 0) {
+            Double firstNum = new Double(singleLink.getNode(middleNumber).toString());
+            Double secondNum = new Double(singleLink.getNode(middleNumber + 1).toString());
+            return (firstNum + secondNum) / 2;
+        } else
+            return new Double(singleLink.getNode(middleNumber + 1).toString());
     }
 
     public int getLastOdd() {
         return this.arrayList.stream()
                 .filter(val -> val % 2 != 0)
-                .distinct()
-                .reduce((first, second) -> second)
-                .orElse(null);
+                .reduce((a, b) -> b)
+                .orElse(0);
     }
 
     public int getIndexOfLastOdd() {
-        throw new NotImplementedException();
+        int lastOdd = arrayList.stream().filter(number -> number % 2 != 0)
+                .reduce((a, b) -> b).get();
+        return arrayList.indexOf(lastOdd);
     }
 }
