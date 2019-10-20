@@ -1,12 +1,11 @@
 package com.thoughtworks.collection;
 
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Filter {
 
-    List<Integer>  array;
+    List<Integer> array;
 
     public Filter(List<Integer> array) {
         this.array = array;
